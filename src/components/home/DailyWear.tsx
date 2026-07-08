@@ -46,6 +46,7 @@ export const DailyWear: React.FC = () => {
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuDccwpoB6Z9cyYYSvJVV1EwtFAVtiN8x0S_vKhiJcKcF3qcmOVhBbMGAp7R_ThzDef3rCb-B9-A1h5-vtVRQzSJeMyIrRsG3N5SOdpYJ4mgHqnnvufMkJFReU3pX7eVJhYoUPvKCKKMKt_uhlYKk0oI1N1P7xChWI1bnnpkfHSeYlKPFjy-NPT2sTv1Jr_GnMdd3JnhBLLCtOasxVY7N2-7vRwxIt9IF3yO1X_yi6WDUv5OYt6gcbC3fQ"
                   alt="Daily Wear Collection"
                   fill
+                  unoptimized
                   sizes="(max-width: 1024px) 100vw, 40vw"
                   className="object-cover hover:scale-103 transition-transform duration-700"
                 />

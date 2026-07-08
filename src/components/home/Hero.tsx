@@ -17,6 +17,7 @@ export const Hero: React.FC = () => {
           alt="Premium Cotton Co-ord set editorial lookbook"
           fill
           priority
+          unoptimized
           sizes="100vw"
           className="object-cover object-center scale-105"
         />

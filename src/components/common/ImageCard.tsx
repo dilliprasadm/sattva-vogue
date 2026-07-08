@@ -38,6 +38,7 @@ export const ImageCard: React.FC<ImageCardProps> = ({
         src={image}
         alt={title}
         fill
+        unoptimized
         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
         className="object-cover transition-transform duration-1000 ease-out group-hover:scale-105"
       />

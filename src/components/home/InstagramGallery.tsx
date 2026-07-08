@@ -33,6 +33,7 @@ export const InstagramGallery: React.FC = () => {
               src={post.image}
               alt={post.alt}
               fill
+              unoptimized
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
               className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
             />

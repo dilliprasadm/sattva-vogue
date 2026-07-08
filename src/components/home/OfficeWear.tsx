@@ -20,6 +20,7 @@ export const OfficeWear: React.FC = () => {
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCSQV2UBj3nFPT58EKLceOuBCLgPnQnUPXsueoQEQ2tqQQN8pb9XMSDArKjqi85VZ0FUWEjbcCHFI1pUs21RnGFBpZmcVRA7iRWRZ-_aP7ByNO-O2OrzE81-dcTmLQ-G6EaYdSLRkAQkBaw-cWl82CfFNO366_oKrS6173IWAoTjoi4beVSX_zS74Fxi5hxsQp23tTUQm_ONN7BkJCd6WD8plfLbhToa3TNj53sHMGJfvmVl9l92WsSg"
                   alt="Office Wear Collection"
                   fill
+                  unoptimized
                   sizes="(max-width: 1024px) 100vw, 40vw"
                   className="object-cover hover:scale-103 transition-transform duration-700"
                 />

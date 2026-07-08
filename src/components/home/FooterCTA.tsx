@@ -15,6 +15,7 @@ export const FooterCTA: React.FC = () => {
           src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkQTD2rQZ6eBWvxbeDjHO2zFP9XV1-SLmTYW183mRaAQBM9MUt2JF4PV3KTObygO0ZwoD7HXUeGi4PLr1ZSLYOd1N8bJ896RhqqPO7bH3Zrcz5F-tMOmRkEElcklSCYq_6reQr_yOHbsX3gjgQLJ6iZz_iVWlL79zLvj15q2RfjL6zTZvNNH6uqWI4cF2Vfw_Ex_LlYvUHm8ekW5YqpH5fixvyt0MEwFMOa1p871GcT6yrcvtrNvRp-A"
           alt="Premium Cotton Ethnic Wear Banner"
           fill
+          unoptimized
           sizes="100vw"
           className="object-cover object-center brightness-75 scale-103"
         />
