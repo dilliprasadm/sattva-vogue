@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Heart } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Product } from '@/data/products';
@@ -24,14 +25,16 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, className = '
     >
       {/* Product Image Section */}
       <div className="relative aspect-[4/5] w-full overflow-hidden bg-brand-beige rounded-sm mb-5">
-        <Image
-          src={product.image}
-          alt={product.name}
-          fill
-          unoptimized
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-        />
+        <Link href="/products/empress-silk-kurta-set" className="absolute inset-0 z-0 block w-full h-full">
+          <Image
+            src={product.image}
+            alt={product.name}
+            fill
+            unoptimized
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+          />
+        </Link>
 
         {/* Favorite Icon */}
         <button
@@ -71,7 +74,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, className = '
       </div>
 
       {/* Product Information */}
-      <div className="flex justify-between items-start">
+      <Link href="/products/empress-silk-kurta-set" className="flex justify-between items-start cursor-pointer w-full">
         <div className="flex flex-col">
           <span className="font-accent text-[10px] text-brand-burgundy uppercase tracking-widest font-semibold mb-1">
             {product.category}
@@ -86,7 +89,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, className = '
         <span className="font-accent text-sm font-semibold text-brand-charcoal ml-4">
           ₹{product.price.toLocaleString('en-IN')}
         </span>
-      </div>
+      </Link>
     </div>
   );
 };

@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { Search, Heart, ShoppingBag, Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { headerNavLinks } from '@/data/navigation';
@@ -35,9 +36,19 @@ export const Header: React.FC = () => {
           {/* Brand Logo */}
           <a
             href="#"
-            className="font-display text-2xl md:text-3xl italic font-semibold text-brand-burgundy tracking-wide hover:opacity-85 transition-opacity"
+            className="flex items-center gap-3 hover:opacity-85 transition-opacity"
           >
-            SATTVA VOGUE
+            <Image
+              src="/logo.png"
+              alt="Sattva Vogue Logo"
+              width={40}
+              height={40}
+              unoptimized
+              className="rounded-full"
+            />
+            <span className="font-display text-xl md:text-2xl italic font-semibold text-brand-burgundy tracking-wide">
+              SATTVA VOGUE
+            </span>
           </a>
 
           {/* Desktop Nav Links */}

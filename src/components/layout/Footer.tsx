@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { Send, Mail } from 'lucide-react';
 import { footerCollections, footerAboutUs, footerAssistance } from '@/data/navigation';
 
@@ -18,8 +19,18 @@ export const Footer: React.FC = () => {
         {/* Brand Summary Column */}
         <div className="lg:col-span-2 flex flex-col justify-between">
           <div>
-            <a href="#" className="font-display text-3xl font-semibold italic text-brand-burgundy mb-6 block">
-              SATTVA VOGUE
+            <a href="#" className="flex items-center gap-3 mb-6 hover:opacity-85 transition-opacity">
+              <Image
+                src="/logo.png"
+                alt="Sattva Vogue Logo"
+                width={44}
+                height={44}
+                unoptimized
+                className="rounded-full"
+              />
+              <span className="font-display text-2xl font-semibold italic text-brand-burgundy tracking-wide">
+                SATTVA VOGUE
+              </span>
             </a>
             <p className="font-body text-sm text-brand-muted leading-relaxed mb-8 max-w-sm">
               Comfortable premium ethnic wear crafted with soul, designed for the modern woman seeking everyday elegance and heritage touchpoints.

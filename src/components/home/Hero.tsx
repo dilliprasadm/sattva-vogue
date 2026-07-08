@@ -5,7 +5,6 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import Button from '../common/Button';
 import FadeUp from '../animations/FadeUp';
-import TextReveal from '../animations/TextReveal';
 
 export const Hero: React.FC = () => {
   return (
@@ -21,41 +20,41 @@ export const Hero: React.FC = () => {
           sizes="100vw"
           className="object-cover object-center scale-105"
         />
-        {/* Soft elegant color overlay */}
-        <div className="absolute inset-0 bg-brand-charcoal/10" />
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-ivory/50 via-transparent to-transparent" />
       </div>
 
       {/* Hero Content */}
-      <div className="relative z-10 text-center max-w-4xl px-margin-mobile flex flex-col items-center">
-        <motion.span
-          initial={{ opacity: 0, letterSpacing: '0.1em' }}
-          animate={{ opacity: 1, letterSpacing: '0.25em' }}
-          transition={{ duration: 1.2, ease: 'easeOut' }}
-          className="font-accent text-xs font-bold uppercase text-brand-burgundy mb-4 tracking-[0.25em]"
-        >
-          Modern Everyday Fashion
-        </motion.span>
-        
-        <TextReveal
-          tag="h1"
-          text="Grace in Every Thread"
-          className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-brand-charcoal mb-6 leading-tight max-w-3xl"
-        />
+      <div className="relative z-10 w-full max-w-[1280px] mx-auto px-6 md:px-12 flex items-center justify-center lg:justify-end h-full pt-20">
+        <div className="bg-brand-ivory/80 backdrop-blur-md p-8 sm:p-12 rounded-md border border-brand-charcoal/5 shadow-premium max-w-xl text-left flex flex-col items-start">
+          <motion.span
+            initial={{ opacity: 0, letterSpacing: '0.1em' }}
+            animate={{ opacity: 1, letterSpacing: '0.25em' }}
+            transition={{ duration: 1.2, ease: 'easeOut' }}
+            className="font-accent text-xs font-bold uppercase text-brand-burgundy mb-5 tracking-[0.25em]"
+          >
+            Modern Everyday Fashion
+          </motion.span>
+          
+          <FadeUp delay={0.3}>
+            <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-brand-charcoal mb-5 leading-[1.2] text-left">
+              Grace in Every <br />
+              <span className="italic text-brand-burgundy font-serif font-semibold">Thread</span>
+            </h1>
+          </FadeUp>
 
-        <FadeUp delay={0.6}>
-          <p className="font-body text-body-lg text-brand-charcoal/80 mb-10 max-w-xl mx-auto italic leading-relaxed">
-            Comfortable premium ethnic wear and co-ord sets designed for contemporary elegance.
-          </p>
-        </FadeUp>
+          <FadeUp delay={0.6}>
+            <p className="font-body text-base text-brand-charcoal/80 mb-8 max-w-md text-left leading-relaxed">
+              Comfortable premium ethnic wear and co-ord sets designed for contemporary everyday elegance.
+            </p>
+          </FadeUp>
 
-        <FadeUp delay={0.8}>
-          <a href="#products">
-            <Button variant="primary" className="shadow-premium">
-              Explore the Collection
-            </Button>
-          </a>
-        </FadeUp>
+          <FadeUp delay={0.8}>
+            <a href="#products">
+              <Button variant="primary" className="shadow-premium">
+                Explore the Collection
+              </Button>
+            </a>
+          </FadeUp>
+        </div>
       </div>
 
       {/* Scroll Down Indicator */}
