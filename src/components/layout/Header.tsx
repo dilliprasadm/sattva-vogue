@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Search, Heart, ShoppingBag, Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { headerNavLinks } from '@/data/navigation';
@@ -34,8 +35,8 @@ export const Header: React.FC = () => {
       >
         <div className="max-w-[1280px] mx-auto w-full px-6 flex justify-between items-center">
           {/* Brand Logo */}
-          <a
-            href="#"
+          <Link
+            href="/"
             className="flex items-center gap-3 hover:opacity-85 transition-opacity"
           >
             <Image
@@ -49,7 +50,7 @@ export const Header: React.FC = () => {
             <span className="font-display text-xl md:text-2xl italic font-semibold text-brand-burgundy tracking-wide">
               SATTVA VOGUE
             </span>
-          </a>
+          </Link>
 
           {/* Desktop Nav Links */}
           <nav className="hidden md:flex items-center gap-10">
@@ -106,9 +107,13 @@ export const Header: React.FC = () => {
               onClick={(e) => e.stopPropagation()}
             >
               <div className="flex justify-between items-center mb-12">
-                <span className="font-display text-xl italic font-semibold text-brand-burgundy">
+                <Link
+                  href="/"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="font-display text-xl italic font-semibold text-brand-burgundy hover:opacity-85 transition-opacity"
+                >
                   Sattva Vogue
-                </span>
+                </Link>
                 <button
                   onClick={() => setMobileMenuOpen(false)}
                   className="p-1 rounded-full hover:bg-brand-beige transition-colors text-brand-charcoal outline-none cursor-pointer"
