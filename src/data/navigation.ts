@@ -7,7 +7,7 @@ export const headerNavLinks: NavLink[] = [
   { label: 'Shop All', href: '#products' },
   { label: 'Co-ord Sets', href: '#featured' },
   { label: 'Kurta Sets', href: '#categories' },
-  { label: 'Our Story', href: '#story' },
+  { label: 'Our Story', href: '/story' },
   { label: 'Journal', href: '/journal' },
 ];
 
@@ -19,7 +19,7 @@ export const footerCollections: NavLink[] = [
 ];
 
 export const footerAboutUs: NavLink[] = [
-  { label: 'Our Story', href: '#story' },
+  { label: 'Our Story', href: '/story' },
   { label: 'Craftsmanship', href: '#why-us' },
   { label: 'Sustainability', href: '#why-us' },
   { label: 'Vogue Journal', href: '/journal' },
