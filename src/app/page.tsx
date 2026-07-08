@@ -31,7 +31,7 @@ export default function Home() {
       {/* 2. Navigation Header */}
       <Header />
 
-      <main className="flex-grow pt-[40px]">
+      <main className="flex-grow">
         {/* 3. Hero Section */}
         <Hero />
 

@@ -25,10 +25,10 @@ export const Header: React.FC = () => {
   return (
     <>
       <header
-        className={`fixed w-full z-40 transition-all duration-500 ${
+        className={`w-full z-40 transition-all duration-500 ${
           isScrolled
-            ? 'top-0 bg-brand-ivory/90 backdrop-blur-md shadow-card py-4'
-            : 'top-[41px] bg-transparent py-6'
+            ? 'fixed top-0 bg-brand-ivory/90 backdrop-blur-md shadow-card py-4'
+            : 'absolute top-[41px] bg-transparent py-6'
         }`}
       >
         <div className="max-w-[1280px] mx-auto w-full px-6 flex justify-between items-center">
