@@ -1,26 +1,60 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fdf9f3;
+  --foreground: #1c1c18;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@theme {
+  /* Custom colors matching the brand identity */
+  --color-brand-burgundy: #900f44;
+  --color-brand-rust: #ae3100;
+  --color-brand-ivory: #fdf9f3;
+  --color-brand-beige: #f1ede7;
+  --color-brand-charcoal: #1c1c18;
+  --color-brand-muted: #574145;
+
+  /* Brand Typography pairings */
+  --font-display: var(--font-playfair), "Playfair Display", serif;
+  --font-body: var(--font-be-vietnam), "Be Vietnam Pro", sans-serif;
+  --font-accent: var(--font-montserrat), "Montserrat", sans-serif;
+
+  /* Custom Premium Shadows */
+  --shadow-premium: 0 20px 40px rgba(144, 15, 68, 0.05);
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.03);
+
+  /* Spacing Scale matching Stitch design system specifications */
+  --spacing-gutter: 32px;
+  --spacing-stack-lg: 120px;
+  --spacing-stack-md: 64px;
+  --spacing-stack-sm: 32px;
+  --spacing-margin-desktop: 80px;
+  --spacing-margin-tablet: 40px;
+  --spacing-margin-mobile: 20px;
+  --spacing-container-max: 1440px;
+
+  /* Border Radius */
+  --radius-xs: 0.25rem;
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Custom Scroll & Utilities */
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-brand-ivory);
+  color: var(--color-brand-charcoal);
+  font-family: var(--font-body);
+  overflow-x: hidden;
 }
