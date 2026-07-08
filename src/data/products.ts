@@ -81,5 +81,23 @@ export const bestSellersProducts: Product[] = [
     badge: 'Trending',
     badgeType: 'primary',
     description: 'Elegant deep tones paired with soft gold metallic accents.',
+  },
+  {
+    id: 'bs-5',
+    name: 'Cotton Co-ord Set (Crimson Bloom)',
+    category: 'Co-ord Sets',
+    price: 6400,
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAUkCjCN51pGF1P_G7nWW_9gYvC1bKcnTdDNG9XM54FRI7DuY3T6Jd4Y8acFCiUE11oo-7FTa3WhYhbhHzrUYrZK7HdKq5FWzN2NYoKC-H_VBbd9A_4okv7aYfhepK8YGsDtDIV145JSKA_nmSAypCN2QeLFXxf2cMddDy_pETpPEYjNFGPgf3GlxFLQMeYbGJlp0KCyx2sddXRfapAmb3N_Es2X28vvta1ZR12UeaoaTcZr0Z4pcqddQ',
+    badge: 'Best Seller',
+    badgeType: 'secondary',
+    description: 'Vibrant crimson dyes hand-printed on breathable soft cotton.',
+  },
+  {
+    id: 'bs-6',
+    name: 'Classic Linen Kurta (Desert Sand)',
+    category: 'Kurta',
+    price: 4900,
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAy9Yn_bvOC1abDWacQTv1zrlAeK7qXqIzD9aeI9Hw24-biltTlybj0DK4ycHcOIujnQSqypSPtIg8GebzdGEoRcVOU2KpxjC1aV3YeawsxXhcrdxydDBTOUYqBwAdIRD4xILKZgL8JbB58QRr_fvbJdTfqAG1QBmo2TmP8dpht_rXWwmxcNylvTf1czEmVO3q23cnFuG2dJMxXB_HYRp5vpB9FJutmt7BVmwTJdk4ZpUkitzRd0OwatQ',
+    description: 'Minimalist sand tone linen, tailored for a crisp modern look.',
   }
 ];

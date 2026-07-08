@@ -14,7 +14,8 @@ export const BestSellers: React.FC = () => {
   const scroll = (direction: 'left' | 'right') => {
     if (scrollRef.current) {
       const { scrollLeft, clientWidth } = scrollRef.current;
-      const scrollAmount = clientWidth * 0.75;
+      // Scroll 1 card on mobile, 2 cards on desktop (320px card + 32px gap = 352px)
+      const scrollAmount = clientWidth < 640 ? 312 : 352 * 2;
       scrollRef.current.scrollTo({
         left: direction === 'left' ? scrollLeft - scrollAmount : scrollLeft + scrollAmount,
         behavior: 'smooth',
@@ -56,10 +57,10 @@ export const BestSellers: React.FC = () => {
       <div className="pl-6 md:pl-[40px] lg:pl-[80px] pr-6">
         <div
           ref={scrollRef}
-          className="flex gap-8 overflow-x-auto pb-8 scroll-smooth no-scrollbar snap-x snap-mandatory"
+          className="flex gap-8 overflow-x-auto pb-8 scroll-smooth no-scrollbar"
         >
           {bestSellersProducts.map((product, index) => (
-            <div key={product.id} className="min-w-[280px] sm:min-w-[320px] max-w-[320px] snap-start">
+            <div key={product.id} className="min-w-[280px] sm:min-w-[320px] max-w-[320px]">
               <FadeUp delay={index * 0.1}>
                 <ProductCard product={product} />
               </FadeUp>

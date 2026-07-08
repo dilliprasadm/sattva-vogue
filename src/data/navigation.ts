@@ -8,7 +8,7 @@ export const headerNavLinks: NavLink[] = [
   { label: 'Co-ord Sets', href: '#featured' },
   { label: 'Kurta Sets', href: '#categories' },
   { label: 'Our Story', href: '#story' },
-  { label: 'Journal', href: '#journal' },
+  { label: 'Journal', href: '/journal' },
 ];
 
 export const footerCollections: NavLink[] = [
@@ -22,7 +22,7 @@ export const footerAboutUs: NavLink[] = [
   { label: 'Our Story', href: '#story' },
   { label: 'Craftsmanship', href: '#why-us' },
   { label: 'Sustainability', href: '#why-us' },
-  { label: 'Vogue Journal', href: '#journal' },
+  { label: 'Vogue Journal', href: '/journal' },
 ];
 
 export const footerAssistance: NavLink[] = [
