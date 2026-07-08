@@ -4,24 +4,24 @@ export interface NavLink {
 }
 
 export const headerNavLinks: NavLink[] = [
-  { label: 'Shop All', href: '/#products' },
-  { label: 'Co-ord Sets', href: '/#featured' },
-  { label: 'Kurta Sets', href: '/#categories' },
-  { label: 'Our Story', href: '/story' },
+  { label: 'Shop All', href: '/shop' },
+  { label: 'Co-ord Sets', href: '/shop/coord-sets' },
+  { label: 'Kurta Sets', href: '/shop/kurta-sets' },
+  { label: 'Our Story', href: '/our-story' },
   { label: 'Journal', href: '/journal' },
 ];
 
 export const footerCollections: NavLink[] = [
-  { label: 'New Arrivals', href: '#new-arrivals' },
-  { label: 'Best Sellers', href: '#best-sellers' },
-  { label: 'Office Wear Collection', href: '#office-wear' },
-  { label: 'Summer Cotton Collection', href: '#daily-wear' },
+  { label: 'New Arrivals', href: '/shop' },
+  { label: 'Best Sellers', href: '/shop' },
+  { label: 'Office Wear Collection', href: '/shop/office-wear' },
+  { label: 'Summer Cotton Collection', href: '/shop/daily-wear' },
 ];
 
 export const footerAboutUs: NavLink[] = [
-  { label: 'Our Story', href: '/story' },
-  { label: 'Craftsmanship', href: '#why-us' },
-  { label: 'Sustainability', href: '#why-us' },
+  { label: 'Our Story', href: '/our-story' },
+  { label: 'Craftsmanship', href: '/our-story' },
+  { label: 'Sustainability', href: '/our-story' },
   { label: 'Vogue Journal', href: '/journal' },
 ];
 
@@ -29,5 +29,5 @@ export const footerAssistance: NavLink[] = [
   { label: 'Shipping & Returns', href: '#' },
   { label: 'Privacy Policy', href: '#' },
   { label: 'Store Locator', href: '#' },
-  { label: 'Contact Us', href: '#' },
+  { label: 'Contact Us', href: '/contact' },
 ];

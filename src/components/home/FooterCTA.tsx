@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Container from '../common/Container';
 import Button from '../common/Button';
 import FadeUp from '../animations/FadeUp';
+import Link from 'next/link';
 
 export const FooterCTA: React.FC = () => {
   return (
@@ -35,11 +36,11 @@ export const FooterCTA: React.FC = () => {
           <p className="font-body text-brand-ivory/80 mb-10 max-w-md mx-auto italic leading-relaxed">
             Discover a collection that bridges traditional craftsmanship with modern design silhouettes.
           </p>
-          <a href="#featured">
+          <Link href="/shop">
             <Button variant="outline" className="border-brand-ivory! text-brand-ivory! hover:bg-brand-ivory! hover:text-brand-charcoal!">
-              Explore Lookbook
+              Shop Now
             </Button>
-          </a>
+          </Link>
         </FadeUp>
       </Container>
     </section>

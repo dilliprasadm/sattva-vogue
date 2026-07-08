@@ -3,6 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { Send, Mail } from 'lucide-react';
+import Link from 'next/link';
 import { footerCollections, footerAboutUs, footerAssistance } from '@/data/navigation';
 
 export const Footer: React.FC = () => {
@@ -19,7 +20,7 @@ export const Footer: React.FC = () => {
         {/* Brand Summary Column */}
         <div className="lg:col-span-2 flex flex-col justify-between">
           <div>
-            <a href="#" className="flex items-center gap-3 mb-6 hover:opacity-85 transition-opacity">
+            <Link href="/" className="flex items-center gap-3 mb-6 hover:opacity-85 transition-opacity">
               <Image
                 src="/logo.png"
                 alt="Sattva Vogue Logo"
@@ -31,7 +32,7 @@ export const Footer: React.FC = () => {
               <span className="font-display text-2xl font-semibold italic text-brand-burgundy tracking-wide">
                 SATTVA VOGUE
               </span>
-            </a>
+            </Link>
             <p className="font-body text-sm text-brand-muted leading-relaxed mb-8 max-w-sm">
               Comfortable premium ethnic wear crafted with soul, designed for the modern woman seeking everyday elegance and heritage touchpoints.
             </p>
@@ -79,9 +80,9 @@ export const Footer: React.FC = () => {
           <ul className="space-y-4 font-body text-sm text-brand-muted">
             {footerCollections.map((link) => (
               <li key={link.label}>
-                <a href={link.href} className="hover:text-brand-burgundy transition-colors duration-300">
+                <Link href={link.href} className="hover:text-brand-burgundy transition-colors duration-300">
                   {link.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -95,9 +96,9 @@ export const Footer: React.FC = () => {
           <ul className="space-y-4 font-body text-sm text-brand-muted">
             {footerAboutUs.map((link) => (
               <li key={link.label}>
-                <a href={link.href} className="hover:text-brand-burgundy transition-colors duration-300">
+                <Link href={link.href} className="hover:text-brand-burgundy transition-colors duration-300">
                   {link.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -111,9 +112,9 @@ export const Footer: React.FC = () => {
           <ul className="space-y-4 font-body text-sm text-brand-muted">
             {footerAssistance.map((link) => (
               <li key={link.label}>
-                <a href={link.href} className="hover:text-brand-burgundy transition-colors duration-300">
+                <Link href={link.href} className="hover:text-brand-burgundy transition-colors duration-300">
                   {link.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

@@ -7,6 +7,8 @@ import Container from '../common/Container';
 import SectionHeading from '../common/SectionHeading';
 import FadeUp from '../animations/FadeUp';
 
+import Link from 'next/link';
+
 export const Categories: React.FC = () => {
   return (
     <section id="categories" className="py-20 bg-brand-beige/25">
@@ -20,7 +22,7 @@ export const Categories: React.FC = () => {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
           {categoriesData.map((category, index) => (
             <FadeUp key={category.id} delay={index * 0.1} className="flex flex-col items-center">
-              <a href={category.href} className="group flex flex-col items-center w-full max-w-[240px]">
+              <Link href={category.href} className="group flex flex-col items-center w-full max-w-[240px]">
                 {/* Oval/Circular Image wrapper */}
                 <div className="relative aspect-[3/4] w-full rounded-full overflow-hidden mb-6 border-4 border-brand-ivory shadow-card group-hover:border-brand-burgundy transition-all duration-500 ease-out">
                   <Image
@@ -38,9 +40,9 @@ export const Categories: React.FC = () => {
                   {category.name}
                 </h3>
                 <span className="font-accent text-[10px] font-bold tracking-widest text-brand-muted group-hover:text-brand-burgundy transition-colors duration-300">
-                  EXPLORE
+                  Explore Collection
                 </span>
-              </a>
+              </Link>
             </FadeUp>
           ))}
         </div>

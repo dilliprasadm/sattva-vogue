@@ -6,6 +6,7 @@ import Container from '../common/Container';
 import SectionHeading from '../common/SectionHeading';
 import Button from '../common/Button';
 import FadeUp from '../animations/FadeUp';
+import Link from 'next/link';
 
 export const OfficeWear: React.FC = () => {
   return (
@@ -44,11 +45,11 @@ export const OfficeWear: React.FC = () => {
                   Our office wear range emphasizes structured cuts, subtle tones, and breathable fabrics. These sets ensure a sharp silhouette without compromising on the cooling comfort of fine premium cotton.
                 </p>
                 <div className="pt-4">
-                  <a href="#products">
+                  <Link href="/shop/office-wear">
                     <Button variant="outline">
-                      Shop Office Wear
+                      Explore Collection
                     </Button>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </FadeUp>

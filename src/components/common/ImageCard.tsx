@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -22,14 +23,14 @@ export const ImageCard: React.FC<ImageCardProps> = ({
   title,
   tag,
   subtitle,
-  btnText = 'Browse',
-  href = '#',
+  btnText = 'Shop Now',
+  href = '/shop',
   className = '',
   aspect = 'aspect-square',
   overlayColor = 'from-brand-burgundy/80 via-brand-burgundy/20 to-transparent',
 }) => {
   return (
-    <a
+    <Link
       href={href}
       className={`group relative block w-full overflow-hidden rounded-md shadow-card hover:shadow-premium transition-all duration-500 ${aspect} ${className}`}
     >
@@ -75,8 +76,9 @@ export const ImageCard: React.FC<ImageCardProps> = ({
           </motion.span>
         </div>
       </div>
-    </a>
+    </Link>
   );
 };
 
 export default ImageCard;
+

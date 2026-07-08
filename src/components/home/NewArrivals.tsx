@@ -7,6 +7,7 @@ import SectionHeading from '../common/SectionHeading';
 import ProductCard from '../common/ProductCard';
 import FadeUp from '../animations/FadeUp';
 import Button from '../common/Button';
+import Link from 'next/link';
 
 export const NewArrivals: React.FC = () => {
   return (
@@ -19,9 +20,9 @@ export const NewArrivals: React.FC = () => {
             className="mb-0!"
           />
           <FadeUp delay={0.2}>
-            <a href="#products">
-              <Button variant="text">View All Collections</Button>
-            </a>
+            <Link href="/shop">
+              <Button variant="text">Shop Collection</Button>
+            </Link>
           </FadeUp>
         </div>
 

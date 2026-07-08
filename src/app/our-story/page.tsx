@@ -101,7 +101,7 @@ export default function StoryPage() {
           <Container className="py-4">
             <ol className="flex items-center space-x-2 font-accent text-[10px] md:text-xs uppercase tracking-wider text-brand-muted">
               <li>
-                <a href="/" className="hover:text-brand-burgundy transition-colors">Home</a>
+                <Link href="/" className="hover:text-brand-burgundy transition-colors">Home</Link>
               </li>
               <li className="flex items-center space-x-1">
                 <ChevronRight className="w-3 h-3 text-brand-charcoal/20" />
@@ -283,12 +283,12 @@ export default function StoryPage() {
             </FadeUp>
             
             <FadeUp delay={0.2} className="flex justify-center">
-              <Link href="/#products" className="inline-block">
+              <Link href="/shop" className="inline-block">
                 <Button
                   variant="outline"
                   className="bg-brand-ivory text-brand-burgundy hover:bg-brand-rust hover:text-brand-ivory border-transparent px-10 py-4.5 rounded-full font-accent text-xs font-bold tracking-widest uppercase transition-all duration-300 shadow-lg flex items-center gap-2 group cursor-pointer"
                 >
-                  <span>View Lookbook</span>
+                  <span>Explore Collection</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>

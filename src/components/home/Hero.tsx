@@ -3,6 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import Button from '../common/Button';
 import FadeUp from '../animations/FadeUp';
 
@@ -48,11 +49,11 @@ export const Hero: React.FC = () => {
           </FadeUp>
 
           <FadeUp delay={0.8}>
-            <a href="#products">
+            <Link href="/shop">
               <Button variant="primary" className="shadow-premium">
-                Explore the Collection
+                Shop Collection
               </Button>
-            </a>
+            </Link>
           </FadeUp>
         </div>
       </div>

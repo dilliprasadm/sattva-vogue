@@ -6,6 +6,7 @@ import Container from '../common/Container';
 import SectionHeading from '../common/SectionHeading';
 import Button from '../common/Button';
 import FadeUp from '../animations/FadeUp';
+import Link from 'next/link';
 
 export const DailyWear: React.FC = () => {
   return (
@@ -28,11 +29,11 @@ export const DailyWear: React.FC = () => {
                   Designed for ease, this capsule features soft textures, natural breathable cottons, and non-restrictive sizing. Simple, elegant cuts and subtle dye works create a comfortable everyday wear experience.
                 </p>
                 <div className="pt-4">
-                  <a href="#products">
+                  <Link href="/shop/daily-wear">
                     <Button variant="outline">
-                      Shop Daily Wear
+                      Explore Collection
                     </Button>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </FadeUp>

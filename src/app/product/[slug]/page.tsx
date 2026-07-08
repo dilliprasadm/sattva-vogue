@@ -2,6 +2,8 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
+import { useParams } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   ChevronRight,
@@ -12,8 +14,7 @@ import {
   Globe,
   Lock,
   Sparkles,
-  Check,
-  ChevronLeft
+  Check
 } from 'lucide-react';
 import { AnnouncementBar } from '@/components/layout/AnnouncementBar';
 import { Header } from '@/components/layout/Header';
@@ -122,35 +123,31 @@ const tabs = [
   }
 ];
 
-// Accessories (Complete the Look)
+// Accessories
 const accessories = [
   {
     id: 'acc-1',
     name: 'Organza Gold Dupatta',
     price: 2490,
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBBc0uQoj7Z5ZmDT9TitjouPYrXtA2hNUPyBN5eJ8USJyXVdC3TTJ0NYTg84yrE5IcaSMH30nPxpCjbUrJsUTquaFLLniGZ210fNAwy_7Cd5gcs8e20CjeQ-9P3aoJD2WtA0d-JYrEIYUARrGwpvjraCuzNnMFptjwnbPc5G-UaxAUEUc79rQPH_7ZDbUqq3RGTTAf5zxODrRye9R1W0kNpiHhTeFGojrc8ioLlwvYccpDp9289Nx3R-A',
-    alt: 'Organza Gold Dupatta'
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBBc0uQoj7Z5ZmDT9TitjouPYrXtA2hNUPyBN5eJ8USJyXVdC3TTJ0NYTg84yrE5IcaSMH30nPxpCjbUrJsUTquaFLLniGZ210fNAwy_7Cd5gcs8e20CjeQ-9P3aoJD2WtA0d-JYrEIYUARrGwpvjraCuzNnMFptjwnbPc5G-UaxAUEUc79rQPH_7ZDbUqq3RGTTAf5zxODrRye9R1W0kNpiHhTeFGojrc8ioLlwvYccpDp9289Nx3R-A'
   },
   {
     id: 'acc-2',
     name: 'Kundan Pearl Drops',
     price: 4200,
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuClZzJ2Oz3oMwJJxp7GFr9wLnn9vyfe1Oh8DTScs-EfvPQ38vBXWRpjESeAuxVWeZze4Gb9mwyznL146b6qw7jrNXq0LpbjQy3dvHl2G162D3reAmj-88HlVUjLKJECU9WvSgAXnMQAIJfxX5S61ad_nQ8OjvrD9CDPV-nXxDxQXON5c7vmkxZpDyKApaFNiYurXQtntx-sb31EJRgNS9AvPaW-0XWdm6pcKtf77KQ0s-Asl6J_ytn5zw',
-    alt: 'Kundan Pearl Drops Chandelier Earrings'
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuClZzJ2Oz3oMwJJxp7GFr9wLnn9vyfe1Oh8DTScs-EfvPQ38vBXWRpjESeAuxVWeZze4Gb9mwyznL146b6qw7jrNXq0LpbjQy3dvHl2G162D3reAmj-88HlVUjLKJECU9WvSgAXnMQAIJfxX5S61ad_nQ8OjvrD9CDPV-nXxDxQXON5c7vmkxZpDyKApaFNiYurXQtntx-sb31EJRgNS9AvPaW-0XWdm6pcKtf77KQ0s-Asl6J_ytn5zw'
   },
   {
     id: 'acc-3',
     name: 'Zari Embroidered Juttis',
     price: 3150,
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBNCZGV2nYweXnMJiQQnIVD3-8k8AyrgEa_HPxtL_mkgOkd6rCIsNBWJpoXMvdBJNfkIyC2FlXS5OmCzt9TcP0diAy8iTfeQuLrOm_A6lWz35PMzK2BsaN8JUo2zoPCVfulzYsREGJYuMTbN9yAn8-JPdiEUB59qBltoDVGQKCX8iYYleIDC2d5rvpjGJLiUGDTBvw06pSplxj5QMh6ks4U2oOCF3pR9PCtwmKaMpORhBx5GWTsi8Acpw',
-    alt: 'Zari Embroidered Leather Juttis'
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBNCZGV2nYweXnMJiQQnIVD3-8k8AyrgEa_HPxtL_mkgOkd6rCIsNBWJpoXMvdBJNfkIyC2FlXS5OmCzt9TcP0diAy8iTfeQuLrOm_A6lWz35PMzK2BsaN8JUo2zoPCVfulzYsREGJYuMTbN9yAn8-JPdiEUB59qBltoDVGQKCX8iYYleIDC2d5rvpjGJLiUGDTBvw06pSplxj5QMh6ks4U2oOCF3pR9PCtwmKaMpORhBx5GWTsi8Acpw'
   },
   {
     id: 'acc-4',
     name: 'Royal Beaded Potli',
     price: 1890,
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAd5ViV8sN6GSb3XpEbc3IJ89uXrNGS8X7YjQlPrHtOvRyA_oNUXb3ZgqSKfOn7CW0EN6ryzP96wWZX1p1qMoFJxiu6UokYX9ywhQX-KWl8OjhIWo703d2Aic42ocTF3u7YvSYRhq14sf00e-GViyeBckMcMjyqozmQirLpvXxtqW4fHVuFYOo-P2uoZ6bT5XZYZ7mHSDBkFB99Q1TUq0YCWDoHDyNdZ8zZ_MkCMOBIQ2RkdccTFuQrHA',
-    alt: 'Royal Beaded Potli Bag in deep magenta'
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAd5ViV8sN6GSb3XpEbc3IJ89uXrNGS8X7YjQlPrHtOvRyA_oNUXb3ZgqSKfOn7CW0EN6ryzP96wWZX1p1qMoFJxiu6UokYX9ywhQX-KWl8OjhIWo703d2Aic42ocTF3u7YvSYRhq14sf00e-GViyeBckMcMjyqozmQirLpvXxtqW4fHVuFYOo-P2uoZ6bT5XZYZ7mHSDBkFB99Q1TUq0YCWDoHDyNdZ8zZ_MkCMOBIQ2RkdccTFuQrHA'
   }
 ];
 
@@ -179,7 +176,10 @@ const reviewsData = [
   }
 ];
 
-export default function ProductDetailsPage() {
+export default function DynamicProductPage() {
+  const params = useParams();
+  const slug = params?.slug as string;
+
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [selectedColor, setSelectedColor] = useState('magenta');
   const [selectedSize, setSelectedSize] = useState('S');
@@ -195,7 +195,7 @@ export default function ProductDetailsPage() {
     setTimeout(() => {
       setCartStatus('success');
       setTimeout(() => setCartStatus('idle'), 2000);
-    }, 1200); // simulate quick adding
+    }, 1200);
   };
 
   const handleBuyNow = () => {
@@ -205,6 +205,13 @@ export default function ProductDetailsPage() {
       alert('Checkout flow triggered! (Visual demonstration only)');
     }, 1200);
   };
+
+  // Map slug metadata to product titles (for demonstration support)
+  const productTitle = slug === 'empress-silk-kurta-set' 
+    ? 'The Empress Silk Kurta Set'
+    : slug
+    ? slug.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')
+    : 'The Empress Silk Kurta Set';
 
   return (
     <div className="flex flex-col min-h-screen bg-brand-ivory">
@@ -216,24 +223,24 @@ export default function ProductDetailsPage() {
 
       <main className="flex-grow pt-24 pb-20">
         
-        {/* Breadcrumb Navigation */}
+        {/* Breadcrumb Navigation - Home > Shop > Category > Product */}
         <div className="border-b border-brand-charcoal/5 bg-brand-beige/10">
           <Container className="py-4">
             <ol className="flex items-center space-x-2 font-accent text-[10px] md:text-xs uppercase tracking-wider text-brand-muted">
               <li>
-                <a href="/" className="hover:text-brand-burgundy transition-colors">Home</a>
+                <Link href="/" className="hover:text-brand-burgundy transition-colors">Home</Link>
               </li>
               <li className="flex items-center space-x-1">
                 <ChevronRight className="w-3 h-3 text-brand-charcoal/20" />
-                <a href="#products" className="hover:text-brand-burgundy transition-colors">Shop</a>
+                <Link href="/shop" className="hover:text-brand-burgundy transition-colors">Shop</Link>
               </li>
               <li className="flex items-center space-x-1">
                 <ChevronRight className="w-3 h-3 text-brand-charcoal/20" />
-                <a href="#" className="hover:text-brand-burgundy transition-colors">Kurta Sets</a>
+                <Link href="/shop/kurta-sets" className="hover:text-brand-burgundy transition-colors">Kurta Sets</Link>
               </li>
               <li className="flex items-center space-x-1">
                 <ChevronRight className="w-3 h-3 text-brand-charcoal/20" />
-                <span className="text-brand-burgundy font-bold">The Empress Silk Kurta Set</span>
+                <span className="text-brand-burgundy font-bold">{productTitle}</span>
               </li>
             </ol>
           </Container>
@@ -310,7 +317,7 @@ export default function ProductDetailsPage() {
               <div className="lg:col-span-5 flex flex-col justify-start">
                 <FadeUp delay={0.1}>
                   <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-brand-burgundy leading-tight mb-4">
-                    The Empress Silk Kurta Set
+                    {productTitle}
                   </h1>
                 </FadeUp>
                 
