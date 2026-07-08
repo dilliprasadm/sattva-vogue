@@ -5,7 +5,7 @@ export interface NavLink {
 
 export const headerNavLinks: NavLink[] = [
   { label: 'Shop All', href: '/shop' },
-  { label: 'Co-ord Sets', href: '/shop/coord-sets' },
+  { label: 'Co-ord Sets', href: '/coord-sets' },
   { label: 'Kurta Sets', href: '/shop/kurta-sets' },
   { label: 'Our Story', href: '/our-story' },
   { label: 'Journal', href: '/journal' },
